@@ -1,0 +1,11 @@
+development: &default
+  adapter: mysql2
+  endocding: utf8
+  database: docknror
+  username: root
+  password:
+  host: db
+
+test:
+  <<: *default
+  database: docknror_test
