@@ -1,0 +1,14 @@
+db:
+  image: mysql
+  environment:
+    MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+    MYSQL_DATABASE: docknror
+web:
+  build: .
+  command: bundle exec rails s -p 3000 -b '0.0.0.0'
+  ports:
+    - "3000:3000"
+  volumes:
+    - .:/app
+  links:
+    - db
